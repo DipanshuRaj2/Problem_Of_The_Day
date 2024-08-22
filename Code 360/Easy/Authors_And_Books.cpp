@@ -20,15 +20,7 @@ vector<string> arrangeAuthors(vector<vector<string>>&s){
 int main()
 {
     vector<vector<string>>s = {{"4","ChetanBhagat", "TwoStates", "Revolution", "HalfGirlfriend", "OneIndianGirl"},{"2", "JKRowling", "HarryPotter", "FantasticBeasts"}};
-    // for(int i = 0; i<s.size(); i++){
-    //     for(int j = 0; j<s[i].size(); j++){
-    //         cout<<s[i][j]<<" ";
-    //     }
-    //     cout<<endl;
-    // }
 
     vector<string>str = arrangeAuthors(s);
-    // string ch = "A";
-    // string str  = "Abc" + ch;
     
 }
