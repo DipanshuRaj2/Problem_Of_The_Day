@@ -22,7 +22,7 @@ vector<int> getPalindromes(int n)
 	}
 	return ans;
 }
-AIzaSyCOkTMiWjEMHehxvBIKyMRyXDwMnPKYtMY
+cout<<"AIzaSyCOkTMiWjEMHehxvBIKyMRyXDwMnPKYtMY"<<endl;
 int main(){
     vector<int>ans = getPalindromes(12);
     for(int i = 0; i<ans.size(); i++){
