@@ -10,49 +10,68 @@ struct Node
         next = nullptr;
     }
 };
-Node* oddEvenList(Node* head)
-{
-    if(head == nullptr){
-        return head;
+// Node *oddEvenList(Node *head)
+// {
+//     Node *t1 = head;
+//     vector<int>arr;
+//     while((t1 != nullptr)&&(t1  -> next!= nullptr)){
+//         arr.push_back(t1->data);
+//         t1 = t1 -> next -> next;
+//     }
+//     if(t1!= nullptr){
+//         arr.push_back(t1->data);
+//     }
+//     t1 = head->next;
+//     while(t1 != nullptr && t1 -> next != nullptr){
+//         arr.push_back(t1->data);
+//         t1 = t1 -> next -> next;
+//     }
+//      if(t1 != nullptr){
+//         arr.push_back(t1->data);
+//     }
+//     t1 = head;
+//     int i = 0;
+//     while(t1 != nullptr){
+//         t1 -> data = arr[i];
+//         t1 = t1 -> next;
+//         i++;
+//     }
+   
+//     return head;
+// }.
+Node *oddEvenList(Node* head){
+    Node* odd = head;
+    Node* even = head -> next;
+    Node* join = head -> next;
+
+     while(even != nullptr && even -> next != nullptr){
+        odd -> next = odd -> next -> next;
+        even -> next = even -> next -> next;
+        odd = odd -> next;
+        even = even -> next;
     }
-    Node* temp = head;
-    vector<int>arr;
-    while(temp != nullptr){
-        arr.push_back(temp -> data);
-        temp = temp -> next;
-    }
-    vector<int>ans;
-    for(int i = 0; i<arr.size(); i = i+2){
-        ans.push_back(arr[i]);
-    }
-    for(int i = 1; i<arr.size(); i = i + 2){
-        ans.push_back(arr[i]);
-    }
-    Node* newHead = new Node(ans[0]);
-    Node* temp1 = newHead;
-    for(int i = 1; i<ans.size(); i++){
-        Node* mover = new Node(ans[i]);
-        temp1 -> next = mover;
-        temp1 = mover;
-    }
-    return newHead;
+    odd -> next = join;
+    return head;
+    
 }
-void print(Node* head){
-    while(head != nullptr){
-        cout<<head -> data<<" ->";
-        head = head -> next;
+void print(Node *head)
+{
+    while (head != nullptr)
+    {
+        cout << head->data << " ->";
+        head = head->next;
     }
-    cout<<"nullptr";
-    cout<<endl;
+    cout << "nullptr";
+    cout << endl;
 }
 int main()
-{   
-    //2 4 6 8 10
-    Node* head = new Node(2);
-    head -> next = new Node(4);
-    head -> next ->next= new Node(6);
-    head -> next ->next->next = new Node(8);
-    head -> next ->next -> next ->next= new Node(10);
+{
+    // 2 4 6 8 10
+    Node *head = new Node(2);
+    head->next = new Node(4);
+    head->next->next = new Node(6);
+    head->next->next->next = new Node(8);
+    head->next->next->next->next = new Node(10);
     // head -> next ->next -> next ->next -> next = new Node(81);
     print(head);
     head = oddEvenList(head);
