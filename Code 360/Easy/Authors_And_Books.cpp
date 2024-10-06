@@ -21,6 +21,6 @@ int main()
 {
     vector<vector<string>>s = {{"4","ChetanBhagat", "TwoStates", "Revolution", "HalfGirlfriend", "OneIndianGirl"},{"2", "JKRowling", "HarryPotter", "FantasticBeasts"}};
 
-    vector<string>str = arrangeAuthors(s);
+    vector<string>str = arrangeAuthors(s);  
     
 }
