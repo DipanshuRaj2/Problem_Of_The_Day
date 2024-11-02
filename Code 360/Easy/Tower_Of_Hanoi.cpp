@@ -5,9 +5,9 @@ void solve(int n, int src, int aux, int des, vector<vector<int>>&ans){
         ans.push_back({src, des});
         return;
     }
-    solve(n-1, src, des, aux, ans);
+    solve(n-1, src, des, aux, ans);  // assume one length of disc we just put src to des;
     ans.push_back({src, des});
-    solve(n-1, aux, src, des, ans);
+    solve(n-1, aux, src, des, ans); // suppose 
 }
 vector<vector<int>> towerOfHanoi(int n){
     vector<vector<int>>ans;
